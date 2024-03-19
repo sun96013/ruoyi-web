@@ -33,7 +33,7 @@ const getUrl=(url:string)=>{
 export const gptGetUrl = getUrl
 export const gptFetch=(url:string,data?:any,opt2?:any )=>{
     mlog('gptFetch', url  );
-    let headers= {'Content-Type':'application/json'}
+    let headers= {'Content-Type':'application/json','Authorization':'Bearer ' + getToken()}
     if(opt2 && opt2.headers ) headers= opt2.headers;
 
     headers={...headers,...getHeaderAuthorization()}
